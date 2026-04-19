@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BenchBuilt3D | 3D Printed Shop Tools & Accessories</title>
 <meta name="description" content="Precision 3D printed automotive shop tools, desk accessories, and organizers. Designed in Ohio, printed in PETG for real-world durability. Shop now on Etsy.">
-<meta name="keywords" content="3D printed tools, engine bay tray, automotive organizer, test light holder, desk toys, PETG printed, BenchBuilt3D">
+<meta name="keywords" content="3D printed tools, engine bay tray, automotive organizer, test light holder, speed loader, desk toys, PETG, BenchBuilt3D">
 <meta property="og:title" content="BenchBuilt3D | 3D Printed Shop Tools & Accessories">
 <meta property="og:description" content="Precision 3D printed automotive shop tools and accessories. Designed in Ohio, built to last.">
 <meta property="og:type" content="website">
@@ -35,6 +35,14 @@ nav{position:fixed;top:0;left:0;width:100%;background:rgba(12,12,12,.92);backdro
 .nav-links a:hover{color:var(--amber)}
 .nav-shop{background:var(--amber)!important;color:var(--bg)!important;padding:.45rem 1.1rem;border-radius:3px;font-weight:700!important}
 .nav-shop:hover{background:var(--amber-light)!important}
+/* Dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{cursor:pointer}
+.nav-dropdown>a::after{content:' \25BE';font-size:.7rem}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1px solid var(--border);min-width:180px;padding:.5rem 0;margin-top:.5rem}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:.5rem 1.2rem;font-size:.8rem!important;letter-spacing:1.5px!important;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:var(--bg3);color:var(--amber)}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
 
@@ -127,6 +135,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
   .nav-links{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:1.5rem;gap:1rem}
   .nav-links.open{display:flex}
   .hamburger{display:flex}
+  .nav-dropdown-menu{position:static;border:none;padding:0 0 0 1rem;margin:0}
+  .nav-dropdown:hover .nav-dropdown-menu{display:block}
+  .nav-links.open .nav-dropdown-menu{display:block}
   .features-in{grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .about-grid,.yt-grid{grid-template-columns:1fr;gap:2rem}
   .prod-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
@@ -143,7 +154,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
+      <li class="nav-dropdown">
+        <a href="#products">Products</a>
+        <div class="nav-dropdown-menu">
+          <a href="#" onclick="filterProducts('auto',document.querySelector('[data-filter=auto]'));return false;">Automotive</a>
+          <a href="#" onclick="filterProducts('desk',document.querySelector('[data-filter=desk]'));return false;">Desk & Office</a>
+          <a href="#" onclick="filterProducts('loaders',document.querySelector('[data-filter=loaders]'));return false;">Speed Loaders</a>
+        </div>
+      </li>
       <li><a href="#about">About</a></li>
       <li><a href="#youtube">Videos</a></li>
       <li><a href="#custom">Custom Orders</a></li>
@@ -179,11 +197,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
     <div class="sec-title">Built for the Bench</div>
     <div class="sec-desc">Every product is designed from scratch, test-printed, and refined before it ever hits the shop. If it doesn't work in my garage, it doesn't get listed.</div>
     <div class="prod-tabs">
-      <button class="prod-tab active" onclick="filterProducts('all',this)">All</button>
-      <button class="prod-tab" onclick="filterProducts('auto',this)">Automotive</button>
-      <button class="prod-tab" onclick="filterProducts('desk',this)">Desk &amp; Office</button>
-      <button class="prod-tab" onclick="filterProducts('range',this)">Range &amp; Firearms</button>
-      <button class="prod-tab" onclick="filterProducts('firearms',this)">Firearms</button>
+      <button class="prod-tab active" data-filter="all" onclick="filterProducts('all',this)">All</button>
+      <button class="prod-tab" data-filter="auto" onclick="filterProducts('auto',this)">Automotive</button>
+      <button class="prod-tab" data-filter="desk" onclick="filterProducts('desk',this)">Desk &amp; Office</button>
+      <button class="prod-tab" data-filter="loaders" onclick="filterProducts('loaders',this)">Speed Loaders</button>
     </div>
     <div class="prod-grid" id="prodGrid">
 
@@ -226,42 +243,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
         </div>
       </a>
 
-      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="prod-card" data-cat="range">
+      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="prod-card" data-cat="loaders">
         <div class="prod-thumb">
-          <img src="speedloader-single-web.jpg" alt="PETG Revolver Speed Loader .357 Magnum .38 Special" loading="lazy">
+          <img src="speedloader-kit-web.jpg" alt="Complete Speed Loader System - .357 Magnum / .38 Special" loading="lazy">
           <span class="prod-tag">Coming Soon</span>
         </div>
         <div class="prod-body">
-          <div class="prod-cat">Range & Firearms</div>
-          <div class="prod-name">PETG Revolver Speed Loader - .357 / .38 Special</div>
-          <div class="prod-desc">6-round twist-knob speed loader for .357 Magnum and .38 Special revolvers. Printed in PETG for heat and impact resistance.</div>
-          <div class="prod-foot"><div class="prod-price">$14.99</div><div class="prod-cta">View &rarr;</div></div>
-        </div>
-      </a>
-
-      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="prod-card" data-cat="range">
-        <div class="prod-thumb">
-          <img src="speedloader-loaded-web.jpg" alt="Speed Loader 4-Pack with Caddy" loading="lazy">
-          <span class="prod-tag">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Range & Firearms</div>
-          <div class="prod-name">Speed Loader 4-Pack with Caddy</div>
-          <div class="prod-desc">Four 6-round speed loaders with a matching PETG caddy that holds all four. 24 rounds at the ready.</div>
-          <div class="prod-foot"><div class="prod-price">$49.99</div><div class="prod-cta">View &rarr;</div></div>
-        </div>
-      </a>
-
-      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="prod-card" data-cat="range">
-        <div class="prod-thumb">
-          <img src="speedloader-kit-web.jpg" alt="Complete Range Kit - Speed Loaders, Caddy, and Loading Tray" loading="lazy">
-          <span class="prod-tag">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Range & Firearms</div>
-          <div class="prod-name">Complete Range Kit - Loaders + Caddy + Tray</div>
-          <div class="prod-desc">The full system: 4 speed loaders, matching caddy, and a 20-round loading tray. Everything you need for a range day, printed in PETG.</div>
-          <div class="prod-foot"><div class="prod-price">$69.99</div><div class="prod-cta">View &rarr;</div></div>
+          <div class="prod-cat">Speed Loaders</div>
+          <div class="prod-name">Complete Speed Loader System - .357 / .38 Special</div>
+          <div class="prod-desc">4 five-round speed loaders with twist-lock knobs, storage caddy, and 20-round loading tray. The full reload kit, printed in PETG. BenchBuilt3D branded.</div>
+          <div class="prod-foot"><div class="prod-price">$64.99</div><div class="prod-cta">Notify Me &rarr;</div></div>
         </div>
       </a>
 
@@ -330,58 +321,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
         </div>
       </a>
 
-      <a href="#custom" class="prod-card" data-cat="firearms">
-        <div class="prod-thumb">
-          <img src="speedloader-caddy.jpg" alt="PETG Revolver Speed Loader System" loading="lazy">
-          <span class="prod-tag" style="background:#555;color:#fff">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms</div>
-          <div class="prod-name">Complete Speed Loader System - .357 / .38 Special</div>
-          <div class="prod-desc">4 five-round speed loaders, storage caddy with twist-lock top, and loading tray. The full reload kit, printed in PETG.</div>
-          <div class="prod-foot"><div class="prod-price">$64.99</div><div class="prod-cta">Notify Me &rarr;</div></div>
-        </div>
-      </a>
-
-      <a href="#custom" class="prod-card" data-cat="firearms">
-        <div class="prod-thumb">
-          <img src="speedloader-caddy.jpg" alt="4-Pack Speed Loader with Caddy" loading="lazy">
-          <span class="prod-tag" style="background:#555;color:#fff">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms</div>
-          <div class="prod-name">4-Pack Speed Loader with Caddy - .357 / .38 Spl</div>
-          <div class="prod-desc">Four 5-round speed loaders with a compact storage caddy. Twist-knob release, PETG printed. Available in multiple colors.</div>
-          <div class="prod-foot"><div class="prod-price">$54.99</div><div class="prod-cta">Notify Me &rarr;</div></div>
-        </div>
-      </a>
-
-      <a href="#custom" class="prod-card" data-cat="firearms">
-        <div class="prod-thumb">
-          <img src="speedloader-caddy.jpg" alt="Single Speed Loader .357 .38 Special" loading="lazy">
-          <span class="prod-tag" style="background:#555;color:#fff">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms</div>
-          <div class="prod-name">Speed Loader - .357 Magnum / .38 Special</div>
-          <div class="prod-desc">Single 5-round speed loader with twist-knob release. PETG for heat resistance - won't warp in a hot car or range bag.</div>
-          <div class="prod-foot"><div class="prod-price">$14.99</div><div class="prod-cta">Notify Me &rarr;</div></div>
-        </div>
-      </a>
-
-      <a href="#custom" class="prod-card" data-cat="firearms">
-        <div class="prod-thumb">
-          <img src="speedloader-caddy.jpg" alt="Speed Loader Loading Tray" loading="lazy">
-          <span class="prod-tag" style="background:#555;color:#fff">Coming Soon</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-cat">Firearms</div>
-          <div class="prod-name">Loading Tray - .357 / .38 Special Round Organizer</div>
-          <div class="prod-desc">Pre-stage your rounds for fast speed loader reloads. Holds 20 rounds in order. Perfect for range day or bedside prep.</div>
-          <div class="prod-foot"><div class="prod-price">$12.99</div><div class="prod-cta">Notify Me &rarr;</div></div>
-        </div>
-      </a>
-
     </div>
   </div>
 </section>
@@ -430,7 +369,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
     <div class="custom-box">
       <div class="sec-label">Custom Work</div>
       <h3>Need Something Specific?</h3>
-      <p>If you've got a tool organization problem, a bracket that doesn't exist, or an idea for something that would make your shop run better - reach out. I design and print custom solutions.</p>
+      <p>Got an idea for a tool, holder, or organizer that doesn't exist yet? I design and print custom solutions in PETG. Send me your idea and I'll quote it.</p>
       <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="btn btn-p">Message on Etsy &rarr;</a>
     </div>
   </div>
@@ -452,10 +391,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 <script>
 function filterProducts(cat,btn){
   document.querySelectorAll('.prod-tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
+  if(btn)btn.classList.add('active');
   document.querySelectorAll('.prod-card').forEach(c=>{
     c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
   });
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
 }
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
