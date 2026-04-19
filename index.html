@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Speed Loader System - .357 / .38 Special | BenchBuilt3D</title>
-<meta name="description" content="4 six-round PETG speed loaders with twist-lock knobs, storage caddy, and 24-round loading tray. Available in 6 colors. Free shipping.">
+<title>BenchBuilt3D | 3D Printed Shop Tools & Accessories</title>
+<meta name="description" content="Precision 3D printed automotive shop tools, desk accessories, and organizers. Designed in Ohio, printed in PETG for real-world durability. Shop now on Etsy.">
+<meta name="keywords" content="3D printed tools, engine bay tray, automotive organizer, test light holder, speed loader, desk toys, PETG, BenchBuilt3D">
+<meta property="og:title" content="BenchBuilt3D | 3D Printed Shop Tools & Accessories">
+<meta property="og:description" content="Precision 3D printed automotive shop tools and accessories. Designed in Ohio, built to last.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -31,69 +35,90 @@ nav{position:fixed;top:0;left:0;width:100%;background:rgba(12,12,12,.92);backdro
 .nav-links a:hover{color:var(--amber)}
 .nav-shop{background:var(--amber)!important;color:var(--bg)!important;padding:.45rem 1.1rem;border-radius:3px;font-weight:700!important}
 .nav-shop:hover{background:var(--amber-light)!important}
+/* Dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{cursor:pointer}
+.nav-dropdown>a::after{content:' \25BE';font-size:.7rem}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1px solid var(--border);min-width:180px;padding:.5rem 0;margin-top:.5rem}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:.5rem 1.2rem;font-size:.8rem!important;letter-spacing:1.5px!important;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:var(--bg3);color:var(--amber)}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
 
-.product-page{max-width:1140px;margin:0 auto;padding:5rem 1.5rem 3rem}
-.back-link{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-c);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--text2);text-decoration:none;margin-bottom:2rem;transition:color .2s}
-.back-link:hover{color:var(--amber)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 15%,rgba(232,138,14,.07) 0%,transparent 55%),radial-gradient(ellipse at 75% 85%,rgba(232,138,14,.04) 0%,transparent 50%)}
+.hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background-image:linear-gradient(25deg,transparent 49.4%,var(--border) 49.4%,var(--border) 50.6%,transparent 50.6%);background-size:55px 55px;opacity:.12}
+.hero-c{position:relative;z-index:1;max-width:780px}
+.badge{display:inline-block;font-family:var(--font-c);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:var(--amber);border:1px solid var(--amber-dark);padding:.35rem 1.1rem;margin-bottom:1.8rem;background:rgba(232,138,14,.06)}
+.hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,6.5vw,4.5rem);line-height:1.05;margin-bottom:1.4rem;letter-spacing:-1px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--font-c);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:2px;padding:.85rem 2rem;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s}
+.btn-p{background:var(--amber);color:var(--bg)}
+.btn-p:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,138,14,.2)}
+.btn-o{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--amber);color:var(--amber)}
 
-.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.features{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 1.5rem}
+.features-in{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.feat-icon{font-size:1.6rem;margin-bottom:.5rem}
+.feat-label{font-family:var(--font-c);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin-bottom:.25rem}
+.feat-sub{font-size:.8rem;color:var(--text3)}
 
-/* Image Gallery */
-.gallery{position:sticky;top:80px}
-.gallery-main{width:100%;aspect-ratio:1;background:var(--bg2);border:1px solid var(--border);overflow:hidden;margin-bottom:.75rem}
-.gallery-main img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.gallery-main:hover img{transform:scale(1.03)}
-.gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
-.gallery-thumb{aspect-ratio:1;background:var(--bg2);border:2px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .2s}
-.gallery-thumb:hover,.gallery-thumb.active{border-color:var(--amber)}
-.gallery-thumb img{width:100%;height:100%;object-fit:cover}
+section{padding:5rem 1.5rem}
+.sec-in{max-width:1140px;margin:0 auto}
+.sec-label{font-family:var(--font-c);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:var(--amber);margin-bottom:.6rem}
+.sec-title{font-family:var(--font-d);font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:.8rem;line-height:1.15}
+.sec-desc{color:var(--text2);font-size:1rem;max-width:560px;margin-bottom:2.5rem;line-height:1.7}
 
-/* Product Info */
-.product-info{padding-top:.5rem}
-.product-info .cat{font-family:var(--font-c);font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:3px;color:var(--amber);margin-bottom:.5rem}
-.product-info h1{font-family:var(--font-d);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;margin-bottom:1rem}
-.product-info .price{font-family:var(--font-d);font-size:2rem;color:var(--amber);margin-bottom:.3rem}
-.product-info .shipping{font-family:var(--font-c);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:1.5rem}
-.product-info .divider{width:100%;height:1px;background:var(--border);margin:1.5rem 0}
-.product-info .desc{color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-size:.95rem}
+#products{background:var(--bg2)}
+.prod-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.prod-tab{font-family:var(--font-c);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;padding:.5rem 1.2rem;background:var(--bg3);color:var(--text2);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.prod-tab:hover,.prod-tab.active{background:var(--amber);color:var(--bg);border-color:var(--amber)}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.prod-card{background:var(--bg3);border:1px solid var(--border);overflow:hidden;transition:all .3s;text-decoration:none;color:inherit;display:block}
+.prod-card:hover{border-color:var(--amber-dark);transform:translateY(-3px);box-shadow:0 10px 35px rgba(0,0,0,.3)}
+.prod-thumb{width:100%;aspect-ratio:4/3;background:var(--bg);position:relative;overflow:hidden}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-thumb img{transform:scale(1.05)}
+.prod-tag{position:absolute;top:10px;left:10px;font-family:var(--font-c);font-weight:700;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;background:var(--amber);color:var(--bg);padding:.2rem .6rem;z-index:1}
+.prod-body{padding:1.1rem}
+.prod-cat{font-family:var(--font-c);font-weight:600;font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:.3rem}
+.prod-name{font-weight:700;font-size:.95rem;margin-bottom:.35rem;line-height:1.3}
+.prod-desc{font-size:.8rem;color:var(--text2);margin-bottom:.85rem;line-height:1.5}
+.prod-foot{display:flex;align-items:center;justify-content:space-between}
+.prod-price{font-family:var(--font-c);font-weight:700;font-size:1.15rem}
+.prod-cta{font-family:var(--font-c);font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);display:flex;align-items:center;gap:.3rem;transition:gap .2s}
+.prod-card:hover .prod-cta{gap:.6rem}
 
-/* Features List */
-.feat-list{list-style:none;margin-bottom:1.5rem}
-.feat-list li{padding:.5rem 0;color:var(--text2);font-size:.9rem;display:flex;align-items:center;gap:.6rem;border-bottom:1px solid var(--border)}
-.feat-list li:last-child{border-bottom:none}
-.feat-list .check{color:var(--amber);font-weight:700;font-size:1.1rem}
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-visual{background:var(--bg2);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual img{width:100%;height:100%;object-fit:cover}
+.about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,138,14,.06),transparent 60%)}
+.about-text h3{font-family:var(--font-d);font-size:1.4rem;margin-bottom:1rem}
+.about-text p{color:var(--text2);margin-bottom:1rem;line-height:1.7;font-size:.95rem}
+.about-stats{display:flex;gap:2rem;margin-top:1.5rem}
+.stat-num{font-family:var(--font-d);font-size:1.5rem;color:var(--amber)}
+.stat-label{font-family:var(--font-c);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3)}
 
-/* Colors */
-.colors-label{font-family:var(--font-c);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin-bottom:.75rem}
-.color-swatches{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
-.swatch{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);cursor:default;position:relative;transition:border-color .2s}
-.swatch:hover{border-color:var(--amber)}
-.swatch-label{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:.65rem;color:var(--text3);white-space:nowrap;opacity:0;transition:opacity .2s;font-family:var(--font-c);letter-spacing:1px;text-transform:uppercase}
-.swatch:hover .swatch-label{opacity:1}
-.swatch-black{background:#222}
-.swatch-grey{background:#888}
-.swatch-yellow{background:#e8c820}
-.swatch-white{background:#e8e4dc}
-.swatch-clear{background:linear-gradient(135deg,rgba(200,200,200,.3),rgba(255,255,255,.15));border-color:#555}
-.swatch-red{background:#c0392b}
+#youtube{background:var(--bg2);border-top:1px solid var(--border)}
+.yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.yt-embed{position:relative;width:100%;aspect-ratio:16/9;background:var(--bg);border:1px solid var(--border);overflow:hidden}
+.yt-embed iframe{width:100%;height:100%;border:0}
+.yt-text .sec-desc{margin-bottom:1.5rem}
+.yt-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-c);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--amber);text-decoration:none;transition:gap .2s}
+.yt-link:hover{gap:.8rem}
 
-/* Buy Button */
-.buy-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:1.1rem 2rem;background:var(--amber);color:var(--bg);font-family:var(--font-d);font-size:1.1rem;text-decoration:none;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:all .25s}
-.buy-btn:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,138,14,.25)}
-.buy-note{text-align:center;margin-top:.75rem;font-size:.75rem;color:var(--text3)}
+#custom{background:var(--bg);text-align:center}
+.custom-box{background:var(--bg2);border:1px solid var(--border);padding:3rem 2rem;max-width:700px;margin:0 auto;position:relative;overflow:hidden}
+.custom-box::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--amber-dark),var(--amber),var(--amber-dark))}
+.custom-box h3{font-family:var(--font-d);font-size:1.5rem;margin-bottom:1rem}
+.custom-box p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
 
-/* Kit Contents */
-.kit-section{margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border)}
-.kit-section h2{font-family:var(--font-d);font-size:1.3rem;margin-bottom:1.5rem}
-.kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.kit-item{background:var(--bg2);border:1px solid var(--border);padding:1.25rem;text-align:center}
-.kit-item .kit-icon{font-size:2rem;margin-bottom:.5rem}
-.kit-item h3{font-family:var(--font-c);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.4rem}
-.kit-item p{font-size:.8rem;color:var(--text2);line-height:1.5}
-
-footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem;margin-top:4rem}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem}
 .foot-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .foot-brand{font-family:var(--font-d);font-size:1rem;color:var(--text3)}
 .foot-brand span{color:var(--amber-dark)}
@@ -102,13 +127,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 .foot-links a:hover{color:var(--amber)}
 .foot-copy{width:100%;text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text3)}
 
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .6s ease forwards}
+.fade-up.d1{animation-delay:.1s}.fade-up.d2{animation-delay:.2s}.fade-up.d3{animation-delay:.3s}
+
 @media(max-width:768px){
   .nav-links{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:1.5rem;gap:1rem}
   .nav-links.open{display:flex}
   .hamburger{display:flex}
-  .product-layout{grid-template-columns:1fr;gap:2rem}
-  .gallery{position:static}
-  .kit-grid{grid-template-columns:1fr}
+  .nav-dropdown-menu{position:static;border:none;padding:0 0 0 1rem;margin:0}
+  .nav-dropdown:hover .nav-dropdown-menu{display:block}
+  .nav-links.open .nav-dropdown-menu{display:block}
+  .features-in{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .about-grid,.yt-grid{grid-template-columns:1fr;gap:2rem}
+  .prod-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .hero h1{font-size:clamp(2rem,8vw,3rem)}
 }
 </style>
 </head>
@@ -116,103 +149,231 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 
 <nav>
   <div class="nav-in">
-    <a href="index.html" class="logo">BENCH<span>BUILT</span>3D</a>
+    <a href="#" class="logo">BENCH<span>BUILT</span>3D</a>
     <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html#products">Products</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#youtube">Videos</a></li>
+      <li class="nav-dropdown">
+        <a href="#products">Products</a>
+        <div class="nav-dropdown-menu">
+          <a href="#" onclick="filterProducts('auto',document.querySelector('[data-filter=auto]'));return false;">Automotive</a>
+          <a href="#" onclick="filterProducts('desk',document.querySelector('[data-filter=desk]'));return false;">Desk & Office</a>
+          <a href="#" onclick="filterProducts('loaders',document.querySelector('[data-filter=loaders]'));return false;">Speed Loaders</a>
+        </div>
+      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#youtube">Videos</a></li>
+      <li><a href="#custom">Custom Orders</a></li>
       <li><a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="nav-shop">Shop on Etsy</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="product-page">
-
-  <a href="index.html#products" class="back-link">&larr; Back to All Products</a>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-      <div class="gallery-main">
-        <img id="mainImg" src="speedloader-kit-web.jpg" alt="Complete Speed Loader System">
-      </div>
-      <div class="gallery-thumbs">
-        <div class="gallery-thumb active" onclick="changeImg('speedloader-kit-web.jpg',this)">
-          <img src="speedloader-kit-web.jpg" alt="Full kit loaded">
-        </div>
-        <div class="gallery-thumb" onclick="changeImg('speedloader-loaded-web.jpg',this)">
-          <img src="speedloader-loaded-web.jpg" alt="Loaders in caddy">
-        </div>
-        <div class="gallery-thumb" onclick="changeImg('speedloader-single-web.jpg',this)">
-          <img src="speedloader-single-web.jpg" alt="Single loader with rounds">
-        </div>
-        <div class="gallery-thumb" onclick="changeImg('speedloader-brand-web.jpg',this)">
-          <img src="speedloader-brand-web.jpg" alt="BenchBuilt3D branding">
-        </div>
-      </div>
-    </div>
-
-    <div class="product-info">
-      <div class="cat">Speed Loaders</div>
-      <h1>Complete Speed Loader System<br>.357 Magnum / .38 Special</h1>
-      <div class="price">$49.99</div>
-      <div class="shipping">Free Shipping &bull; US Only</div>
-
-      <div class="divider"></div>
-
-      <p class="desc">The full reload system for your .357 Magnum or .38 Special revolver. 4 six-round speed loaders with twist-lock knobs, a matching storage caddy, and a 24-round loading tray. Everything you need for range day or bedside prep. Designed, printed, and tested in Ohio.</p>
-
-      <ul class="feat-list">
-        <li><span class="check">&#10003;</span> Printed in PETG - heat and impact resistant</li>
-        <li><span class="check">&#10003;</span> Won't warp in a hot car or range bag</li>
-        <li><span class="check">&#10003;</span> Twist-lock knobs for secure hold and quick release</li>
-        <li><span class="check">&#10003;</span> Caddy holds all 4 loaders - 24 rounds ready to go</li>
-        <li><span class="check">&#10003;</span> Loading tray for fast, organized reloads</li>
-        <li><span class="check">&#10003;</span> BenchBuilt3D.com branded on every unit</li>
-      </ul>
-
-      <div class="colors-label">Available Colors</div>
-      <div class="color-swatches">
-        <div class="swatch swatch-black"><span class="swatch-label">Black</span></div>
-        <div class="swatch swatch-grey"><span class="swatch-label">Grey</span></div>
-        <div class="swatch swatch-yellow"><span class="swatch-label">Yellow</span></div>
-        <div class="swatch swatch-white"><span class="swatch-label">White</span></div>
-        <div class="swatch swatch-clear"><span class="swatch-label">Clear</span></div>
-        <div class="swatch swatch-red"><span class="swatch-label">Red</span></div>
-      </div>
-
-      <a href="https://buy.stripe.com/28E9AM8873XBbn53xI73G00" target="_blank" rel="noopener" class="buy-btn">Buy Now &rarr;</a>
-      <div class="buy-note">Secure checkout powered by Stripe. Specify color in order notes.</div>
-
-    </div>
-
-  </div>
-
-  <div class="kit-section">
-    <h2>What's In the Kit</h2>
-    <div class="kit-grid">
-      <div class="kit-item">
-        <div class="kit-icon">&#128260;</div>
-        <h3>4 Speed Loaders</h3>
-        <p>Six-round capacity each. Twist-lock knob holds rounds secure until you release. Fits .357 Magnum and .38 Special.</p>
-      </div>
-      <div class="kit-item">
-        <div class="kit-icon">&#128230;</div>
-        <h3>Storage Caddy</h3>
-        <p>Holds all 4 loaders in a compact block. Twist-lock top keeps everything locked down during transport.</p>
-      </div>
-      <div class="kit-item">
-        <div class="kit-icon">&#9635;</div>
-        <h3>24-Round Loading Tray</h3>
-        <p>Pre-stage your rounds for fast reloads. Drop rounds in, press loader down, twist, and go.</p>
-      </div>
+<section class="hero">
+  <div class="hero-c">
+    <div class="badge fade-up">Designed in Ohio &bull; Printed to Last</div>
+    <h1 class="fade-up d1">3D PRINTED<br>SHOP <em>TOOLS</em><br>& ACCESSORIES</h1>
+    <p class="fade-up d2">Functional tools and accessories designed for real workshops. Precision printed in PETG on Bambu Lab printers for strength, heat resistance, and durability that holds up on the job.</p>
+    <div class="hero-btns fade-up d3">
+      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="btn btn-p">Shop on Etsy &rarr;</a>
+      <a href="#products" class="btn btn-o">View Products</a>
     </div>
   </div>
+</section>
 
+<div class="features">
+  <div class="features-in">
+    <div class="fade-up"><div class="feat-icon">&#9881;</div><div class="feat-label">PETG Printed</div><div class="feat-sub">Heat & impact resistant</div></div>
+    <div class="fade-up d1"><div class="feat-icon">&#9733;</div><div class="feat-label">Designed to Use</div><div class="feat-sub">Real tools, not display pieces</div></div>
+    <div class="fade-up d2"><div class="feat-icon">&#9878;</div><div class="feat-label">Made in Ohio</div><div class="feat-sub">Small shop, big quality</div></div>
+    <div class="fade-up d3"><div class="feat-icon">&#10003;</div><div class="feat-label">Ships Fast</div><div class="feat-sub">Printed & packed in-house</div></div>
+  </div>
 </div>
+
+<section id="products">
+  <div class="sec-in">
+    <div class="sec-label">Products</div>
+    <div class="sec-title">Built for the Bench</div>
+    <div class="sec-desc">Every product is designed from scratch, test-printed, and refined before it ever hits the shop. If it doesn't work in my garage, it doesn't get listed.</div>
+    <div class="prod-tabs">
+      <button class="prod-tab active" data-filter="all" onclick="filterProducts('all',this)">All</button>
+      <button class="prod-tab" data-filter="auto" onclick="filterProducts('auto',this)">Automotive</button>
+      <button class="prod-tab" data-filter="desk" onclick="filterProducts('desk',this)">Desk &amp; Office</button>
+      <button class="prod-tab" data-filter="loaders" onclick="filterProducts('loaders',this)">Speed Loaders</button>
+    </div>
+    <div class="prod-grid" id="prodGrid">
+
+      <a href="https://www.etsy.com/listing/4468338223/engine-bay-memory-tray-9-compartment" target="_blank" rel="noopener" class="prod-card" data-cat="auto">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/58be6d/7829353971/il_794xN.7829353971_bfo6.jpg" alt="Engine Bay Memory Tray - 9 Compartment Labeled Magnetic Bolt Organizer" loading="lazy">
+          <span class="prod-tag">Shop Tool</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Automotive</div>
+          <div class="prod-name">Engine Bay Memory Tray - 9 Compartment</div>
+          <div class="prod-desc">Labeled compartments for valve cover bolts, alternator bolts, AC bolts, coil pack bolts, and more. Never lose a bolt again.</div>
+          <div class="prod-foot"><div class="prod-price">$39.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4468331523/3d-printed-magnetic-engine-bay-parts" target="_blank" rel="noopener" class="prod-card" data-cat="auto">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/ba73b4/7829294425/il_794xN.7829294425_jq8b.jpg" alt="3D Printed Magnetic Engine Bay Parts Tray" loading="lazy">
+          <span class="prod-tag">Magnetic</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Automotive</div>
+          <div class="prod-name">Magnetic Engine Bay Parts Tray - Left/Right</div>
+          <div class="prod-desc">Left and right side magnetic trays that keep your parts organized and in reach while you wrench.</div>
+          <div class="prod-foot"><div class="prod-price">$33.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4434483974/test-light-holder-automotive-tool" target="_blank" rel="noopener" class="prod-card" data-cat="auto">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/0f1a51/7560802008/il_794xN.7560802008_b127.jpg" alt="Test Light Holder - Automotive Tool Organizer" loading="lazy">
+          <span class="prod-tag">Organizer</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Automotive</div>
+          <div class="prod-name">Test Light Holder - Tool Organizer</div>
+          <div class="prod-desc">Wall-mount or bench-mount organizer for your test lights. Keeps your most-used diagnostic tools in reach.</div>
+          <div class="prod-foot"><div class="prod-price">$33.97 - $39.97</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="speedloader.html" class="prod-card" data-cat="loaders">
+        <div class="prod-thumb">
+          <img src="speedloader-kit-web.jpg" alt="Complete Speed Loader System - .357 Magnum / .38 Special" loading="lazy">
+          <span class="prod-tag">New</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Speed Loaders</div>
+          <div class="prod-name">Complete Speed Loader System - .357 / .38 Special</div>
+          <div class="prod-desc">4 six-round speed loaders with twist-lock knobs, storage caddy, and 24-round loading tray. Available in Black, Grey, Yellow, White, Clear (Transparent), and Red. Free shipping.</div>
+          <div class="prod-foot"><div class="prod-price">$49.99</div><div class="prod-cta">Buy Now &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4443966900/desk-toy-owl-focus-productivity-office" target="_blank" rel="noopener" class="prod-card" data-cat="desk">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/6c40eb/7620260858/il_794xN.7620260858_1qsu.jpg" alt="Desk Toy Owl - Focus and Productivity" loading="lazy">
+          <span class="prod-tag">Fidget</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Desk & Office</div>
+          <div class="prod-name">Desk Toy Owl - Focus & Productivity</div>
+          <div class="prod-desc">Stress relief fidget and office gift. A conversation starter that keeps your hands busy during calls.</div>
+          <div class="prod-foot"><div class="prod-price">$19.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4443683686/desk-toy-cat-stress-relief-fidget-office" target="_blank" rel="noopener" class="prod-card" data-cat="desk">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/0f1707/7668200701/il_794xN.7668200701_ha6n.jpg" alt="Desk Toy Cat - Stress Relief Fidget" loading="lazy">
+          <span class="prod-tag">Fidget</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Desk & Office</div>
+          <div class="prod-name">Desk Toy Cat - Stress Relief Fidget</div>
+          <div class="prod-desc">Office gift and desk companion. Perfect for fidgeting during zoom calls or long meetings.</div>
+          <div class="prod-foot"><div class="prod-price">$19.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4443676390/desk-toy-panda-stress-relief-fidget" target="_blank" rel="noopener" class="prod-card" data-cat="desk">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/7017be/7620249854/il_794xN.7620249854_rp3d.jpg" alt="Desk Toy Panda - Stress Relief Fidget" loading="lazy">
+          <span class="prod-tag">Fidget</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Desk & Office</div>
+          <div class="prod-name">Desk Toy Panda - Stress Relief Fidget</div>
+          <div class="prod-desc">Office-friendly fidget toy and gift. Looks good on any desk, works even better in your hands.</div>
+          <div class="prod-foot"><div class="prod-price">$19.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4443681129/desk-toy-set-3-piece-symbol-blocks" target="_blank" rel="noopener" class="prod-card" data-cat="desk">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/7d3108/7618399292/il_794xN.7618399292_d8v8.jpg" alt="Desk Toy Set - 3-Piece Symbol Blocks" loading="lazy">
+          <span class="prod-tag">Set</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Desk & Office</div>
+          <div class="prod-name">Desk Toy Set - 3-Piece Symbol Blocks</div>
+          <div class="prod-desc">Stress relief display blocks. Stack them, fidget with them, or line them up on your desk.</div>
+          <div class="prod-foot"><div class="prod-price">$22.99</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+      <a href="https://www.etsy.com/listing/4443951895/display-block-for-desk-toys-stand-for" target="_blank" rel="noopener" class="prod-card" data-cat="desk">
+        <div class="prod-thumb">
+          <img src="https://i.etsystatic.com/63841788/r/il/f1967b/7668214239/il_794xN.7668214239_sr28.jpg" alt="Display Block for Desk Toys" loading="lazy">
+          <span class="prod-tag">Display</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Desk & Office</div>
+          <div class="prod-name">Display Block for Desk Toys</div>
+          <div class="prod-desc">Stand for mood animals and desk toy collection. A clean base to show off your favorites.</div>
+          <div class="prod-foot"><div class="prod-price">$5.00</div><div class="prod-cta">Shop &rarr;</div></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-in">
+    <div class="sec-label">About</div>
+    <div class="sec-title">From the Garage to Your Garage</div>
+    <div class="about-grid">
+      <div class="about-visual">
+        <img src="https://i.etsystatic.com/63841788/r/il/58be6d/7829353971/il_794xN.7829353971_bfo6.jpg" alt="BenchBuilt3D Workshop">
+      </div>
+      <div class="about-text">
+        <h3>Built Because I Needed Them</h3>
+        <p>BenchBuilt3D started the way most good ideas do - out of frustration. I was sick of losing bolts during engine jobs, so I designed a tray that actually keeps everything organized and labeled. Then I built a test light holder because mine kept rolling off the bench.</p>
+        <p>Every product starts as something I need in my own shop, gets designed from scratch, test-printed in PETG on Bambu Lab printers, and put through real use before I'll sell it to anyone else.</p>
+        <p>Based out of Ohio. One-man shop. Every item printed, inspected, and packed by hand.</p>
+        <div class="about-stats">
+          <div><div class="stat-num">PETG</div><div class="stat-label">Material</div></div>
+          <div><div class="stat-num">Bambu</div><div class="stat-label">Lab Printers</div></div>
+          <div><div class="stat-num">Ohio</div><div class="stat-label">Made</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="youtube">
+  <div class="sec-in">
+    <div class="sec-label">Videos</div>
+    <div class="sec-title">See It In Action</div>
+    <div class="yt-grid">
+      <div class="yt-embed">
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCRCYICG-v2aYxIqOuibklfw" title="Advanced Backyard Mechanic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="yt-text">
+        <div class="sec-desc">Check out the Advanced Backyard Mechanic YouTube channel to see these tools in real-world use - engine swaps, diagnostic work, and heavy equipment projects where they earn their keep.</div>
+        <a href="https://www.youtube.com/channel/UCRCYICG-v2aYxIqOuibklfw" target="_blank" rel="noopener" class="yt-link">Subscribe on YouTube &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="custom">
+  <div class="sec-in">
+    <div class="custom-box">
+      <div class="sec-label">Custom Work</div>
+      <h3>Need Something Specific?</h3>
+      <p>Got an idea for a tool, holder, or organizer that doesn't exist yet? I design and print custom solutions in PETG. Send me your idea and I'll quote it.</p>
+      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="btn btn-p">Message on Etsy &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="foot-in">
@@ -220,18 +381,31 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
     <div class="foot-links">
       <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener">Etsy Shop</a>
       <a href="https://www.youtube.com/channel/UCRCYICG-v2aYxIqOuibklfw" target="_blank" rel="noopener">YouTube</a>
-      <a href="index.html">Home</a>
+      <a href="#products">Products</a>
+      <a href="#custom">Custom Orders</a>
     </div>
     <div class="foot-copy">&copy; 2026 BenchBuilt3D. All rights reserved. Ohio.</div>
   </div>
 </footer>
 
 <script>
-function changeImg(src, thumb) {
-  document.getElementById('mainImg').src = src;
-  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-  thumb.classList.add('active');
+function filterProducts(cat,btn){
+  document.querySelectorAll('.prod-tab').forEach(t=>t.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  document.querySelectorAll('.prod-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
 }
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.prod-card,.about-grid,.yt-grid,.custom-box').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);
+});
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));
+});
 </script>
 </body>
 </html>
