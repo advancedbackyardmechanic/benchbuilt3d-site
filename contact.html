@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | BenchBuilt3D</title>
+<meta name="description" content="Contact BenchBuilt3D for custom 3D printed tools, speed loaders, and accessories. Questions, custom orders, and wholesale inquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0c0c;--bg2:#151515;--bg3:#1e1e1e;--bg4:#282828;
+  --amber:#e88a0e;--amber-light:#f5a623;--amber-dark:#a85e00;
+  --text:#ede8e0;--text2:#a09890;--text3:#605850;
+  --border:#2a2725;
+  --font-d:'Archivo Black',Impact,sans-serif;
+  --font-b:'Barlow',system-ui,sans-serif;
+  --font-c:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+nav{position:fixed;top:0;left:0;width:100%;background:rgba(12,12,12,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:999;padding:0 1.5rem}
+.nav-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--font-d);font-size:1.15rem;color:var(--text);text-decoration:none;letter-spacing:.5px}
+.logo span{color:var(--amber)}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{font-family:var(--font-c);font-weight:600;font-size:.85rem;color:var(--text2);text-decoration:none;text-transform:uppercase;letter-spacing:2px;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-shop{background:var(--amber)!important;color:var(--bg)!important;padding:.45rem 1.1rem;border-radius:3px;font-weight:700!important}
+.nav-shop:hover{background:var(--amber-light)!important}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
+
+.contact-page{max-width:700px;margin:0 auto;padding:6rem 1.5rem 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-c);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--text2);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+.back-link:hover{color:var(--amber)}
+
+.contact-page h1{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:.75rem}
+.contact-page .subtitle{color:var(--text2);font-size:1rem;margin-bottom:2.5rem;line-height:1.7}
+
+.contact-form{display:flex;flex-direction:column;gap:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{font-family:var(--font-c);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text2)}
+.form-group input,.form-group textarea,.form-group select{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:var(--font-b);font-size:.95rem;padding:.75rem 1rem;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--amber)}
+.form-group textarea{min-height:150px;resize:vertical}
+.form-group select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a09890' fill='none' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+
+.submit-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:1rem 2rem;background:var(--amber);color:var(--bg);font-family:var(--font-d);font-size:1rem;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:all .25s;margin-top:.5rem}
+.submit-btn:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,138,14,.25)}
+
+.contact-alt{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center}
+.contact-alt p{color:var(--text3);font-size:.85rem;margin-bottom:.5rem}
+.contact-alt a{color:var(--amber);text-decoration:none;font-weight:600}
+.contact-alt a:hover{color:var(--amber-light)}
+
+footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem;margin-top:4rem}
+.foot-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-brand{font-family:var(--font-d);font-size:1rem;color:var(--text3)}
+.foot-brand span{color:var(--amber-dark)}
+.foot-links{display:flex;gap:1.5rem}
+.foot-links a{font-family:var(--font-c);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--amber)}
+.foot-copy{width:100%;text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text3)}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:1.5rem;gap:1rem}
+  .nav-links.open{display:flex}
+  .hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">BENCH<span>BUILT</span>3D</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="speedloader.html">Speed Loaders</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#youtube">Videos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener" class="nav-shop">Shop on Etsy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="contact-page">
+
+  <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+  <h1>Get In Touch</h1>
+  <p class="subtitle">Have a question about a product, need a custom design, or want to talk about a bulk order? Fill out the form below and I'll get back to you.</p>
+
+  <form class="contact-form" action="https://formsubmit.co/advancedbackyardmechanic@gmail.com" method="POST">
+    <!-- Formsubmit config -->
+    <input type="hidden" name="_subject" value="New message from BenchBuilt3D.com">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://benchbuilt3d.com/index.html">
+    <input type="text" name="_honey" style="display:none">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">What's this about?</label>
+      <select id="subject" name="subject" required>
+        <option value="" disabled selected>Select a topic</option>
+        <option value="Product Question">Product Question</option>
+        <option value="Custom Order">Custom Order / Custom Design</option>
+        <option value="Speed Loader Inquiry">Speed Loader Inquiry</option>
+        <option value="Bulk / Wholesale">Bulk / Wholesale Order</option>
+        <option value="Shipping Question">Shipping Question</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Tell me what you need..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message &rarr;</button>
+  </form>
+
+  <div class="contact-alt">
+    <p>Prefer email? Reach me directly at</p>
+    <a href="mailto:advancedbackyardmechanic@gmail.com">advancedbackyardmechanic@gmail.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">BENCH<span>BUILT</span>3D</div>
+    <div class="foot-links">
+      <a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" rel="noopener">Etsy Shop</a>
+      <a href="https://www.youtube.com/channel/UCRCYICG-v2aYxIqOuibklfw" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html">Home</a>
+    </div>
+    <div class="foot-copy">&copy; 2026 BenchBuilt3D. All rights reserved. Ohio.</div>
+  </div>
+</footer>
+
+</body>
+</html>
