@@ -78,20 +78,26 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 <body>
 
 <nav>
-  <div class="nav-in">
-    <a href="index.html" class="logo">BENCH<span>BUILT</span>3D</a>
-    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html#products">Products</a></li>
-      <li><a href="speedloader.html">Speed Loaders</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#youtube">Videos</a></li>
-      <li><a href="index.html#custom">Custom Orders</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+<div class="nav-in">
+<a href="index.html" class="logo">BENCH<span>BUILT</span>3D</a>
+<button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links">
+<li class="nav-dropdown"><a href="index.html#products">Products</a>
+<ul class="nav-dropdown-menu">
+<li><a href="index.html#products">Automotive</a></li>
+<li><a href="index.html#products">Desk &amp; Office</a></li>
+</ul>
+</li>
+<li><a href="tools.html">Tools I Use</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#youtube">Videos</a></li>
+<li><a href="index.html#custom">Custom Orders</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+<li><a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" class="nav-shop">Shop Etsy</a></li>
+</ul>
+</div>
 </nav>
 
 <div class="contact-page">
