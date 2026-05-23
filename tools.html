@@ -30,10 +30,14 @@ nav{position:fixed;top:0;left:0;width:100%;background:rgba(12,12,12,.92);backdro
 .nav-links a:hover,.nav-links a.active{color:var(--amber)}
 .nav-shop{background:var(--amber)!important;color:var(--bg)!important;padding:.45rem 1.1rem;border-radius:3px;font-weight:700!important}
 .nav-shop:hover{background:var(--amber-light)!important}
+.nav-dropdown{position:relative}
+.nav-dropdown>a::after{content:' \25BE';font-size:.7rem}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1px solid var(--border);min-width:180px;padding:.5rem 0;padding-top:.75rem;margin-top:0}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:.5rem 1.2rem;font-size:.8rem!important;letter-spacing:1.5px!important;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:var(--bg3);color:var(--amber)}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
-
-/* Page Hero */
 .page-hero{padding:6rem 1.5rem 3rem;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(232,138,14,.07) 0%,transparent 60%)}
 .page-hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background-image:linear-gradient(25deg,transparent 49.4%,var(--border) 49.4%,var(--border) 50.6%,transparent 50.6%);background-size:55px 55px;opacity:.1}
@@ -43,41 +47,32 @@ nav{position:fixed;top:0;left:0;width:100%;background:rgba(12,12,12,.92);backdro
 .page-hero h1 em{font-style:normal;color:var(--amber)}
 .page-hero p{font-size:1rem;color:var(--text2);max-width:600px;line-height:1.75;margin-bottom:.75rem}
 .disclosure{font-size:.8rem;color:var(--text3);font-style:italic;max-width:600px;line-height:1.6}
-.disclosure a{color:var(--text3);text-decoration:underline}
-
-/* Category Sections */
 .tools-wrap{max-width:1140px;margin:0 auto;padding:4rem 1.5rem}
 .cat-section{margin-bottom:4rem}
 .cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .cat-icon{font-size:1.8rem;line-height:1}
 .cat-label{font-family:var(--font-c);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:3px;color:var(--amber);margin-bottom:.2rem}
 .cat-title{font-family:var(--font-d);font-size:1.25rem;line-height:1.2}
-
-/* Tool Cards */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
 .tool-card{background:var(--bg2);border:1px solid var(--border);display:flex;flex-direction:column;transition:all .3s;text-decoration:none;color:inherit;position:relative;overflow:hidden}
 .tool-card:hover{border-color:var(--amber-dark);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .tool-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--amber-dark);transition:background .2s}
 .tool-card:hover::before{background:var(--amber)}
-.card-img{width:100%;aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border-bottom:1px solid var(--border)}
-.card-img img{width:100%;height:100%;object-fit:contain;padding:1rem;transition:transform .4s}
-.tool-card:hover .card-img img{transform:scale(1.05)}
-.card-img .cat-fallback{font-size:3.5rem;opacity:.3}
-.card-body{padding:1.1rem 1.1rem .85rem 1.3rem;flex:1;display:flex;flex-direction:column}
-.card-name{font-weight:700;font-size:.92rem;line-height:1.35;margin-bottom:.5rem;color:var(--text)}
-.card-price{font-family:var(--font-c);font-weight:700;font-size:1.1rem;color:var(--amber);margin-bottom:.9rem}
+.card-img{width:100%;aspect-ratio:1;background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--border)}
+.card-img img{width:100%;height:100%;object-fit:contain;padding:.75rem;transition:transform .4s;background:#fff}
+.tool-card:hover .card-img img{transform:scale(1.06)}
+.card-body{padding:1rem 1rem .8rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.card-name{font-weight:700;font-size:.88rem;line-height:1.35;margin-bottom:.5rem;color:var(--text)}
+.card-price{font-family:var(--font-c);font-weight:700;font-size:1.05rem;color:var(--amber);margin-bottom:.6rem}
 .card-price.no-price{color:var(--text3);font-size:.8rem}
-.card-cta{margin-top:auto;display:flex;align-items:center;justify-content:space-between;background:var(--bg3);padding:.65rem 1rem;border-top:1px solid var(--border);font-family:var(--font-c);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);transition:all .2s}
+.card-cta{margin-top:auto;display:flex;align-items:center;justify-content:space-between;background:var(--bg3);padding:.6rem 1rem;border-top:1px solid var(--border);font-family:var(--font-c);font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);transition:all .2s}
 .tool-card:hover .card-cta{background:var(--amber);color:var(--bg)}
 .card-cta-arrow{transition:transform .2s}
 .tool-card:hover .card-cta-arrow{transform:translateX(4px)}
-
-/* Affiliate Banner */
-.affiliate-banner{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--amber-dark);padding:1.5rem 2rem;margin-bottom:4rem;max-width:1140px;margin-left:auto;margin-right:auto;display:flex;gap:1.5rem;align-items:flex-start;margin-top:-1rem}
+.affiliate-banner{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--amber-dark);padding:1.5rem 2rem;margin-bottom:4rem;display:flex;gap:1.5rem;align-items:flex-start}
 .affiliate-banner-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
 .affiliate-banner h3{font-family:var(--font-c);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--amber);margin-bottom:.35rem}
 .affiliate-banner p{font-size:.85rem;color:var(--text2);line-height:1.65}
-
 footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem}
 .foot-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .foot-brand{font-family:var(--font-d);font-size:1rem;color:var(--text3)}
@@ -86,7 +81,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 .foot-links a{font-family:var(--font-c);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);text-decoration:none;transition:color .2s}
 .foot-links a:hover{color:var(--amber)}
 .foot-copy{width:100%;text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text3)}
-
 @media(max-width:768px){
 .nav-links{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:1.5rem;gap:1rem}
 .nav-links.open{display:flex}
@@ -94,13 +88,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 .tools-grid{grid-template-columns:1fr 1fr}
 .affiliate-banner{flex-direction:column;gap:.75rem}
 }
-@media(max-width:480px){
-.tools-grid{grid-template-columns:1fr}
-}
+@media(max-width:480px){.tools-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <nav>
 <div class="nav-in">
 <a href="index.html" class="logo">BENCH<span>BUILT</span>3D</a>
@@ -108,9 +99,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#products">Products</a></li>
+<li class="nav-dropdown"><a href="index.html#products">Products</a>
+<ul class="nav-dropdown-menu">
+<li><a href="index.html#products">Automotive</a></li>
+<li><a href="index.html#products">Desk &amp; Office</a></li>
+</ul>
+</li>
 <li><a href="tools.html" class="active">Tools I Use</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#youtube">Videos</a></li>
+<li><a href="index.html#custom">Custom Orders</a></li>
 <li><a href="contact.html">Contact</a></li>
 <li><a href="https://www.etsy.com/shop/BenchBuilt3D" target="_blank" class="nav-shop">Shop Etsy</a></li>
 </ul>
@@ -119,10 +117,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 
 <div class="page-hero">
 <div class="page-hero-c">
-<div class="badge">Shop Tools & Gear</div>
+<div class="badge">Shop Tools &amp; Gear</div>
 <h1>Tools I <em>Actually</em> Use</h1>
 <p>No fluff, no filler. Every item on this page has earned a spot in my shop. These are the tools that show up in my videos and get used on real jobs &mdash; curated from years of working on Ford vehicles and building 3D printed accessories.</p>
-<p class="disclosure">This page contains affiliate links. If you purchase through one of these links, I may earn a small commission at no extra cost to you. It helps keep the lights on and the printers running. &mdash; Thanks for the support.</p>
+<p class="disclosure">This page contains affiliate links. If you purchase through one of these links, I may earn a small commission at no extra cost to you. It helps keep the lights on and the printers running.</p>
 </div>
 </div>
 
@@ -132,396 +130,208 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 <div class="affiliate-banner-icon">&#9888;</div>
 <div>
 <h3>Affiliate Disclosure</h3>
-<p>BenchBuilt3D is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. Prices shown are approximate and may vary.</p>
+<p>BenchBuilt3D is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate I earn from qualifying purchases. Prices shown are approximate and may vary.</p>
 </div>
 </div>
 
-<!-- ELECTRICAL & DIAGNOSTIC -->
 <div class="cat-section" id="electrical">
-<div class="cat-header">
-<div class="cat-icon">&#9889;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Electrical &amp; Diagnostic</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#9889;</div><div><div class="cat-label">Category</div><div class="cat-title">Electrical &amp; Diagnostic</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/4q7doCy" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img">
-<img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00JOYPTZK&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benchbuilt-20" alt="Power Probe III" onerror="this.style.display='none';this.parentElement.querySelector('.cat-fallback').style.opacity='0.4'">
-<span class="cat-fallback" style="display:none">&#9889;</span>
-</div>
-<div class="card-body">
-<div class="card-name">Power Probe III w/Case &amp; Accessories</div>
-<div class="card-price">$161.92</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B005MVB3S0.01._SCLZZZZZZZ_.jpg" alt="Power Probe III" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Power Probe III w/Case &amp; Accessories</div><div class="card-price">$161.92</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/47hcdcm" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img">
-<img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00MO0YOEI&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benchbuilt-20" alt="Fluke 15B+" onerror="this.style.display='none';this.parentElement.querySelector('.cat-fallback').style.opacity='0.4'">
-<span class="cat-fallback" style="display:none">&#9889;</span>
-</div>
-<div class="card-body">
-<div class="card-name">Fluke 15B+ Digital Multimeter</div>
-<div class="card-price">$109.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B01IH41CUW.01._SCLZZZZZZZ_.jpg" alt="Fluke 15B+" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Fluke 15B+ Digital Multimeter</div><div class="card-price">$109.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/3KIxDXh" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img">
-<span class="cat-fallback">&#9889;</span>
-</div>
-<div class="card-body">
-<div class="card-name">AstroAI Digital Multimeter and Analyzer</div>
-<div class="card-price">$30.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B071JL6LLL.01._SCLZZZZZZZ_.jpg" alt="AstroAI Multimeter" loading="lazy"></div>
+<div class="card-body"><div class="card-name">AstroAI Digital Multimeter and Analyzer</div><div class="card-price">$30.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- TORQUE & DRIVE TOOLS -->
 <div class="cat-section" id="torque">
-<div class="cat-header">
-<div class="cat-icon">&#128295;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Torque &amp; Drive Tools</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#128295;</div><div><div class="cat-label">Category</div><div class="cat-title">Torque &amp; Drive Tools</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/48YYKHq" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">Digital Torque Adapter 1/2&quot; Drive</div>
-<div class="card-price">$32.25</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0D9H7CNYQ.01._SCLZZZZZZZ_.jpg" alt="Digital Torque Adapter" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Digital Torque Adapter 1/2&quot; Drive</div><div class="card-price">$32.25</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/46UuoTO" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">LEXIVON Torque Wrench 1/2&quot; Drive &mdash; 10&ndash;150 Ft-Lb</div>
-<div class="card-price">$44.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07MP1Q3W8.01._SCLZZZZZZZ_.jpg" alt="LEXIVON Torque Wrench 150ftlb" loading="lazy"></div>
+<div class="card-body"><div class="card-name">LEXIVON Torque Wrench 1/2&quot; Drive &mdash; 10&ndash;150 Ft-Lb</div><div class="card-price">$44.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4mXj0fZ" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">LEXIVON 1/2&quot; Drive Click Torque Wrench &mdash; 25&ndash;250 Ft-Lb</div>
-<div class="card-price">$69.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07MKSJ4SG.01._SCLZZZZZZZ_.jpg" alt="LEXIVON Torque Wrench 250ftlb" loading="lazy"></div>
+<div class="card-body"><div class="card-name">LEXIVON 1/2&quot; Drive Click Torque Wrench &mdash; 25&ndash;250 Ft-Lb</div><div class="card-price">$69.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4qAwm53" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">1/2&quot; Drive Extension Breaker Bar, 18&quot;</div>
-<div class="card-price">$18.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B000N38FH4.01._SCLZZZZZZZ_.jpg" alt="Breaker Bar 18in" loading="lazy"></div>
+<div class="card-body"><div class="card-name">1/2&quot; Drive Extension Breaker Bar, 18&quot;</div><div class="card-price">$18.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/3JDdpxT" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">1/2&quot; Drive Breaker Bar, 24&quot; CR-V Steel</div>
-<div class="card-price">$28.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B074WHR1SW.01._SCLZZZZZZZ_.jpg" alt="Breaker Bar 24in" loading="lazy"></div>
+<div class="card-body"><div class="card-name">1/2&quot; Drive Breaker Bar, 24&quot; CR-V Steel</div><div class="card-price">$28.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/49znFSj" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128295;</span></div>
-<div class="card-body">
-<div class="card-name">1/2&quot; Drive Heavy-Duty Breaker Bar, 30&quot;</div>
-<div class="card-price">$29.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B003UV7GK8.01._SCLZZZZZZZ_.jpg" alt="Breaker Bar 30in" loading="lazy"></div>
+<div class="card-body"><div class="card-name">1/2&quot; Drive Heavy-Duty Breaker Bar, 30&quot;</div><div class="card-price">$29.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- MILWAUKEE POWER TOOLS -->
 <div class="cat-section" id="power-tools">
-<div class="cat-header">
-<div class="cat-icon">&#128296;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Milwaukee Power Tools</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#128296;</div><div><div class="cat-label">Category</div><div class="cat-title">Milwaukee Power Tools</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/3Jm8T6G" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128296;</span></div>
-<div class="card-body">
-<div class="card-name">Milwaukee M12 FUEL Stubby 3/8&quot; Impact Wrench &mdash; Bare Tool</div>
-<div class="card-price">$169.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0DVRYG9SR.01._SCLZZZZZZZ_.jpg" alt="M12 Impact Bare" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Milwaukee M12 FUEL Stubby 3/8&quot; Impact Wrench &mdash; Bare Tool</div><div class="card-price">$169.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/3JmyBYP" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128296;</span></div>
-<div class="card-body">
-<div class="card-name">Milwaukee M12 FUEL Stubby 3/8&quot; Impact Wrench &mdash; Kit</div>
-<div class="card-price">$290.00</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0FHH56M6B.01._SCLZZZZZZZ_.jpg" alt="M12 Impact Kit" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Milwaukee M12 FUEL Stubby 3/8&quot; Impact Wrench &mdash; Kit</div><div class="card-price">$290.00</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4obnEbm" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128296;</span></div>
-<div class="card-body">
-<div class="card-name">Milwaukee M12 FUEL Extended Reach Box Ratchet</div>
-<div class="card-price">$329.00</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0CK45YRHT.01._SCLZZZZZZZ_.jpg" alt="M12 Extended Ratchet" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Milwaukee M12 FUEL Extended Reach Box Ratchet</div><div class="card-price">$329.00</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4oTXWsl" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128296;</span></div>
-<div class="card-body">
-<div class="card-name">Milwaukee M18 FUEL 1/2&quot; HIGH TORQUE Impact Wrench w/Friction Ring</div>
-<div class="card-price">$337.97</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0CVFGN5H4.01._SCLZZZZZZZ_.jpg" alt="M18 Impact Wrench" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Milwaukee M18 FUEL 1/2&quot; HIGH TORQUE Impact Wrench w/Friction Ring</div><div class="card-price">$337.97</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- FLUIDS, FILTERS & COOLING -->
 <div class="cat-section" id="fluids">
-<div class="cat-header">
-<div class="cat-icon">&#128167;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Fluids, Filters &amp; Cooling</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#128167;</div><div><div class="cat-label">Category</div><div class="cat-title">Fluids, Filters &amp; Cooling</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/46M5ZkO" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">Edelmann 846260 Fitting</div>
-<div class="card-price">$16.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B000NCXJ1W.01._SCLZZZZZZZ_.jpg" alt="Edelmann Fitting" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Edelmann 846260 Fitting</div><div class="card-price">$16.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4ogLQsR" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">Fluid Pump for Standard Quart Bottles</div>
-<div class="card-price">$11.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0853CNLYZ.01._SCLZZZZZZZ_.jpg" alt="Fluid Pump" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Fluid Pump for Standard Quart Bottles</div><div class="card-price">$11.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/48iRNRo" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">HVAC Complete Kit</div>
-<div class="card-price">$134.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07LBLDZ89.01._SCLZZZZZZZ_.jpg" alt="HVAC Kit" loading="lazy"></div>
+<div class="card-body"><div class="card-name">HVAC Complete Kit</div><div class="card-price">$134.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/3KOhfnX" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">Motorcraft FG1060 Fuel Filter</div>
-<div class="card-price">$21.49</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B000AMW0JM.01._SCLZZZZZZZ_.jpg" alt="Motorcraft Filter" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Motorcraft FG1060 Fuel Filter</div><div class="card-price">$21.49</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4nLVcwY" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">PFS-201 Fuel Pump</div>
-<div class="card-price">$115.20</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0FRZ62DZH.01._SCLZZZZZZZ_.jpg" alt="PFS-201 Fuel Pump" loading="lazy"></div>
+<div class="card-body"><div class="card-name">PFS-201 Fuel Pump</div><div class="card-price">$115.20</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4hIlI8n" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">Refractometer for Automobile Antifreeze System</div>
-<div class="card-price">$21.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07DLDZFJX.01._SCLZZZZZZZ_.jpg" alt="Antifreeze Refractometer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Refractometer for Automobile Antifreeze System</div><div class="card-price">$21.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4p4DSUi" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128167;</span></div>
-<div class="card-body">
-<div class="card-name">OEMTOOLS 27066 Coolant System Refiller Kit, 3 Adapters</div>
-<div class="card-price">$97.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B01GSQA5BI.01._SCLZZZZZZZ_.jpg" alt="Coolant Refiller Kit" loading="lazy"></div>
+<div class="card-body"><div class="card-name">OEMTOOLS 27066 Coolant System Refiller Kit, 3 Adapters</div><div class="card-price">$97.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- SPRAY & CLEANING -->
 <div class="cat-section" id="spray">
-<div class="cat-header">
-<div class="cat-icon">&#127774;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Spray &amp; Cleaning</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#127774;</div><div><div class="cat-label">Category</div><div class="cat-title">Spray &amp; Cleaning</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/3ICloef" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#127774;</span></div>
-<div class="card-body">
-<div class="card-name">Thickened Aluminum Refillable Aerosol Spray Can / Pneumatic Compressed Air Sprayer</div>
-<div class="card-price">$53.90</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07K42FFLC.01._SCLZZZZZZZ_.jpg" alt="Aluminum Aerosol Sprayer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Thickened Aluminum Refillable Aerosol Spray Can / Pneumatic Compressed Air Sprayer</div><div class="card-price">$53.90</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/46K0nrh" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#127774;</span></div>
-<div class="card-body">
-<div class="card-name">Zep Model B Heavy-Duty Steel Solvent Sprayer</div>
-<div class="card-price no-price">Check Amazon for price</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B084HLLTMP.01._SCLZZZZZZZ_.jpg" alt="Zep Solvent Sprayer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Zep Model B Heavy-Duty Steel Solvent Sprayer</div><div class="card-price no-price">Check Amazon for price</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4ngs0NH" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#127774;</span></div>
-<div class="card-body">
-<div class="card-name">Vaper 19419 Spray Gun &mdash; Red</div>
-<div class="card-price">$49.19</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0035FH906.01._SCLZZZZZZZ_.jpg" alt="Vaper Red Sprayer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Vaper 19419 Spray Gun &mdash; Red</div><div class="card-price">$49.19</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/4mYJAWi" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#127774;</span></div>
-<div class="card-body">
-<div class="card-name">Vaper 19425 Spray Gun &mdash; Green</div>
-<div class="card-price">$42.05</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0BQX8JL2X.01._SCLZZZZZZZ_.jpg" alt="Vaper Green Sprayer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Vaper 19425 Spray Gun &mdash; Green</div><div class="card-price">$42.05</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/3KIAoYr" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#127774;</span></div>
-<div class="card-body">
-<div class="card-name">Vaper 19421 Spray Gun &mdash; Twin Pack</div>
-<div class="card-price">$86.86</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0069TUXHQ.01._SCLZZZZZZZ_.jpg" alt="Vaper Twin Pack" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Vaper 19421 Spray Gun &mdash; Twin Pack</div><div class="card-price">$86.86</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- SPECIALTY FORD TOOLS -->
 <div class="cat-section" id="specialty">
-<div class="cat-header">
-<div class="cat-icon">&#128736;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Specialty &amp; Ford-Specific Tools</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#128736;</div><div><div class="cat-label">Category</div><div class="cat-title">Specialty &amp; Ford-Specific Tools</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/4q2CaE3" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128736;</span></div>
-<div class="card-body">
-<div class="card-name">Camshaft Timing Locking Tool Kit &mdash; Ford Fusion / Escape / Focus / Fiesta / Mazda</div>
-<div class="card-price">$26.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B07TCMF9TH.01._SCLZZZZZZZ_.jpg" alt="Camshaft Timing Kit" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Camshaft Timing Locking Tool Kit &mdash; Ford Fusion / Escape / Focus / Fiesta / Mazda</div><div class="card-price">$26.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/46VX4fd" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128736;</span></div>
-<div class="card-body">
-<div class="card-name">CTA Tools 5062 Flywheel Holder &mdash; Compatible with Ford 1.6L</div>
-<div class="card-price">$59.51</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B082M2QQGC.01._SCLZZZZZZZ_.jpg" alt="CTA Flywheel Holder" loading="lazy"></div>
+<div class="card-body"><div class="card-name">CTA Tools 5062 Flywheel Holder &mdash; Compatible with Ford 1.6L</div><div class="card-price">$59.51</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/43tqC34" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128293;</span></div>
-<div class="card-body">
-<div class="card-name">Solary H7E Induction Heater Kit</div>
-<div class="card-price">$209.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0FM49FB3N.01._SCLZZZZZZZ_.jpg" alt="Solary Induction Heater" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Solary H7E Induction Heater Kit</div><div class="card-price">$209.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/47UtCYE" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128736;</span></div>
-<div class="card-body">
-<div class="card-name">Sure Strike Drilling/Crack Hammer &mdash; 3-Pound Sledge</div>
-<div class="card-price">$21.98</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B00433SC4Q.01._SCLZZZZZZZ_.jpg" alt="Sure Strike Hammer" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Sure Strike Drilling/Crack Hammer &mdash; 3-Pound Sledge</div><div class="card-price">$21.98</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-<!-- HARDWARE & MISC -->
 <div class="cat-section" id="hardware">
-<div class="cat-header">
-<div class="cat-icon">&#128269;</div>
-<div>
-<div class="cat-label">Category</div>
-<div class="cat-title">Hardware &amp; Misc</div>
-</div>
-</div>
+<div class="cat-header"><div class="cat-icon">&#128269;</div><div><div class="cat-label">Category</div><div class="cat-title">Hardware &amp; Misc</div></div></div>
 <div class="tools-grid">
-
 <a href="https://amzn.to/4mZj6nk" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128269;</span></div>
-<div class="card-body">
-<div class="card-name">Self-Tapping Screws for Metal</div>
-<div class="card-price">$39.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0FDKHFVHC.01._SCLZZZZZZZ_.jpg" alt="Self-Tapping Screws" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Self-Tapping Screws for Metal (1600-piece kit)</div><div class="card-price">$39.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 <a href="https://amzn.to/47jaZ0c" target="_blank" rel="noopener" class="tool-card">
-<div class="card-img"><span class="cat-fallback">&#128269;</span></div>
-<div class="card-body">
-<div class="card-name">Key Fob Replacement Batteries for Chevy</div>
-<div class="card-price">$9.99</div>
-</div>
+<div class="card-img"><img src="https://images-na.ssl-images-amazon.com/images/P/B0D53P8QV4.01._SCLZZZZZZZ_.jpg" alt="Key Fob Batteries" loading="lazy"></div>
+<div class="card-body"><div class="card-name">Key Fob Replacement Batteries for Chevy</div><div class="card-price">$9.99</div></div>
 <div class="card-cta"><span>View on Amazon</span><span class="card-cta-arrow">&#8594;</span></div>
 </a>
-
 </div>
 </div>
 
-</div><!-- /.tools-wrap -->
+</div>
 
 <footer>
 <div class="foot-in">
@@ -538,4 +348,4 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 1.5r
 </footer>
 
 </body>
-</html>
+                         </html>
